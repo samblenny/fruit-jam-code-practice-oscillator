@@ -12,6 +12,7 @@ Morse code practice oscillator for Fruit Jam with 3d-printable mx straight key.
 - [Adafruit Fruit Jam](https://www.adafruit.com/product/6200)
 - [Adafruit TRRS Jack Breakout Board](https://www.adafruit.com/product/5764)
 - [3.5mm Male/Male Stereo Cable](https://www.adafruit.com/product/2698)
+  (3.5mm mono modular patch cables also work)
 - [Panel Mount 3.5mm TRS Audio Jack](https://www.adafruit.com/product/3692)
 - [30 AWG Silicone Stranded-Core Wire, Black](https://www.adafruit.com/product/2003)
 - [30 AWG Silicone Stranded-Core Wire, Yellow](https://www.adafruit.com/product/2004)
