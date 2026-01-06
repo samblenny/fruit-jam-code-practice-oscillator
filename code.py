@@ -5,7 +5,7 @@
 #
 from audiobusio import I2SOut
 import audiofilters
-from board import I2C, I2S_BCLK, I2S_DIN, I2S_MCLK, I2S_WS, A4
+from board import I2C, I2S_BCLK, I2S_DIN, I2S_MCLK, I2S_WS, A4, BUTTON1
 import digitalio
 from micropython import const
 from pwmio import PWMOut
@@ -80,6 +80,10 @@ def run():
     tip = digitalio.DigitalInOut(A4)
     tip.switch_to_input(digitalio.Pull.UP)
 
+    # Also support onboard button #1
+    button = digitalio.DigitalInOut(BUTTON1)
+    button.switch_to_input(digitalio.Pull.UP)
+
     # Cache function references (go faster)
     sleep = time.sleep
     press = synth.press
@@ -91,7 +95,7 @@ def run():
     note = synthio.Note(frequency=MORSE_HZ)
     prev = True
     while True:
-        tv = tip.value
+        tv = tip.value and button.value
         if tv != prev:
             prev = tv
             if tv:
