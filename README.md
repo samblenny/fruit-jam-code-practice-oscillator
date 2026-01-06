@@ -27,6 +27,8 @@ line the board up off by one pin, you may end up shorting 3V to GND when you
 plug in the key.
 
 
+Fruit Jam Wiring:
+
 ```
   Fruit Jam
   GPIO Port
@@ -48,4 +50,21 @@ plug in the key.
 | 3V  |  3V |
 | 5V  |  5V |
 +-----+-----+
+```
+
+
+MX Straight Key Wiring:
+
+```
+TRS Headphone Jack               Cherry MX Compatible Key Switch
+
+                                            ||
+                                        /--+||+--\
+     +----------+                      /          \
+     |   \/-----|--- 3 Right           ============
++~~~~+          |                 black   |   |
+|---------------|----- 1 Sleeve ----------+   +
++~~~~+          |                             |
+     |      /\--|--- 2 Left (Tip) ------------+
+     +----------|                    yellow
 ```
