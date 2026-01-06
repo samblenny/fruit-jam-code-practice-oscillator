@@ -22,7 +22,7 @@ Morse code practice oscillator for Fruit Jam with 3d-printable mx straight key.
 
 **CAUTION:** Be very careful about alignment when plugging the TRRS jack
 breakout board into the GPIO port. Make sure to put **Sleeve in GND** and
-**Ring in A5*. DO NOT plug Sleeve into 3V, which is right next to GND! If you
+**Ring in A5**. DO NOT plug Sleeve into 3V, which is right next to GND! If you
 line the board up off by one pin, you may end up shorting 3V to GND when you
 plug in the key.
 
@@ -33,11 +33,11 @@ plug in the key.
 +-----+-----+     TRRS Jack
 | 5V  |  5V |     Breakout
 | 3V  |  3V |    +----------------+
-| G   | GND |----| Sleeve         |   <- Sleeve is GND
+| G   | GND |----| Sleeve         |   <- Sleeve: GND
 | RST |  A1 |----| Right +-------+|
 | PR  |  A2 |----| RSw   +       +-+
 | SCK |  A3 |----| LSw   +       +-+
-| MI  |  A4 |----| Left  +-------+|   <- Left is Tip (input with pullup)
+| MI  |  A4 |----| Left  +-------+|   <- Left: Tip (input w/ pullup)
 | MO  |  A5 |----| Ring           |
 | D+  |  D6 |    +----------------+
 | D-  |  D7 |
