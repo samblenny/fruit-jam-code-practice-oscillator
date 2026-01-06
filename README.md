@@ -2,7 +2,7 @@
 <!-- SPDX-FileCopyrightText: Copyright 2026 Sam Blenny -->
 # Fruit Jam Code Practice Oscillator
 
-**DRAFT: WORK IN PROGRESS**
+![code-practice-oscillator-1.jpeg](code-practice-oscillator-1.jpeg)
 
 Morse code practice oscillator for Fruit Jam with 3d-printable mx straight key.
 
@@ -16,6 +16,16 @@ Morse code practice oscillator for Fruit Jam with 3d-printable mx straight key.
 - [30 AWG Silicone Stranded-Core Wire, Black](https://www.adafruit.com/product/2003)
 - [30 AWG Silicone Stranded-Core Wire, Yellow](https://www.adafruit.com/product/2004)
 - [Kailh Mechanical Key Switches - Linear Red](https://www.adafruit.com/product/4952)
+- M5x8mm set screw
+
+
+## 3D Printing
+
+Blender and STL files are in the [morse_keys](folder). The MX straight key
+frame uses flexure springs that are fine to print in PLA. I used a the standard
+Bambu Studio 0.2mm layer height preset with the exceptions of calibrating my
+X-Y hole compensation, slowing down the maximum acceleration, and increasing
+the walls from 2 to 3 (but 2 probably would have been fine).
 
 
 ## Wiring
@@ -25,6 +35,8 @@ breakout board into the GPIO port. Make sure to put **Sleeve in GND** and
 **Ring in A5**. DO NOT plug Sleeve into 3V, which is right next to GND! If you
 line the board up off by one pin, you may end up shorting 3V to GND when you
 plug in the key.
+
+![code-practice-oscillator-2.jpeg](code-practice-oscillator-2.jpeg)
 
 
 Fruit Jam Wiring:
