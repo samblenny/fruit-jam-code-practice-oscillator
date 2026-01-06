@@ -19,6 +19,13 @@ Morse code practice oscillator for Fruit Jam with 3d-printable mx straight key.
 - M5x8mm set screw
 
 
+## Audio Output
+
+The code is configured for **Line Level** output on the headphone jack. It will
+be *way too loud* for headphones as-is, but you can edit the code to adjust the
+volume or switch to using speaker output (see TLV320DAC Learn guide).
+
+
 ## 3D Printing
 
 Blender and STL files are in the [morse_keys](folder). The MX straight key
