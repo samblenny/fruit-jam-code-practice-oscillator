@@ -5,7 +5,6 @@
 #
 from audiobusio import I2SOut
 import audiofilters
-import audiomixer
 from board import (
     I2C, I2S_BCLK, I2S_DIN, I2S_MCLK, I2S_WS, A4
 )
