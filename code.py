@@ -5,16 +5,15 @@
 #
 from audiobusio import I2SOut
 import audiofilters
-from board import (
-    I2C, I2S_BCLK, I2S_DIN, I2S_MCLK, I2S_WS, A4
-)
+from board import I2C, I2S_BCLK, I2S_DIN, I2S_MCLK, I2S_WS, A4
 import digitalio
-import gc
 from micropython import const
 from pwmio import PWMOut
 import synthio
 import time
 import ulab.numpy as np
+
+
 from adafruit_tlv320 import TLV320DAC3100
 
 
