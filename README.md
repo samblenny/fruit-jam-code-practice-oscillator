@@ -35,6 +35,8 @@ the standard Bambu Studio 0.2mm layer height preset modified to calibrate my
 X-Y hole compensation, slow down the maximum acceleration, and increase the
 walls from 2 to 3 (but 2 probably would have been fine).
 
+![morse_keys/mx-straight-key-2.jpeg](morse_keys/mx-straight-key-2.jpeg)
+
 
 ## Wiring
 
