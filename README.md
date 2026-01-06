@@ -28,11 +28,11 @@ volume or switch to using speaker output (see TLV320DAC Learn guide).
 
 ## 3D Printing
 
-Blender and STL files are in the [morse_keys](folder). The MX straight key
-frame uses flexure springs that are fine to print in PLA. I used a the standard
-Bambu Studio 0.2mm layer height preset with the exceptions of calibrating my
-X-Y hole compensation, slowing down the maximum acceleration, and increasing
-the walls from 2 to 3 (but 2 probably would have been fine).
+Blender and STL files are in the [morse_keys](morse_keys) folder. The MX
+straight key frame uses flexure springs that are fine to print in PLA. I used a
+the standard Bambu Studio 0.2mm layer height preset with the exceptions of
+calibrating my X-Y hole compensation, slowing down the maximum acceleration,
+and increasing the walls from 2 to 3 (but 2 probably would have been fine).
 
 
 ## Wiring
