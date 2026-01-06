@@ -75,7 +75,7 @@ def run():
     # Configure paddle input on tip (Left) of TRRS Jack plugged into GPIO port
     # === DANGER!!! ===
     # Plug the breakout board into the GPIO port with Sleeve in GND and Ring in
-    # in A5. DO NOT to plug Sleeve into 3V, which is right next to GND!
+    # in A5. DO NOT accidentally plug Sleeve into 3V, which is next to GND!
     # =================
     tip = digitalio.DigitalInOut(A4)
     tip.switch_to_input(digitalio.Pull.UP)
