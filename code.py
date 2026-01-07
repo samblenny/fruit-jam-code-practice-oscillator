@@ -5,7 +5,7 @@
 #
 from audiobusio import I2SOut
 import audiofilters
-from board import I2C, I2S_BCLK, I2S_DIN, I2S_MCLK, I2S_WS, A4
+from board import I2C, I2S_BCLK, I2S_DIN, I2S_MCLK, I2S_WS, A4, BUTTON3
 import digitalio
 from micropython import const
 from pwmio import PWMOut
@@ -80,6 +80,10 @@ def run():
     tip = digitalio.DigitalInOut(A4)
     tip.switch_to_input(digitalio.Pull.UP)
 
+    # Also take input from Button #3
+    b3 = digitalio.DigitalInOut(BUTTON3)
+    b3.switch_to_input(digitalio.Pull.UP)
+
     # Cache function references (go faster)
     sleep = time.sleep
     press = synth.press
@@ -89,15 +93,19 @@ def run():
     # connected to GND by the Morse code key
     print(f"Code practice oscillator is ready.")
     note = synthio.Note(frequency=MORSE_HZ)
-    prev = True
+    prev_pressed = False
     while True:
-        tv = tip.value
-        if tv != prev:
-            prev = tv
-            if tv:
-                release(note)
-            else:
+        # Both Button #3 and the straight key input pin are active low, meaning
+        # their value property is True when not pressed and False when pressed.
+        # So, to get a value that's True when either button is pressed, take
+        # the logical AND of the active low signals, then invert that with NOT.
+        pressed = not (tip.value and b3.value)
+        if pressed != prev_pressed:
+            prev_pressed = pressed
+            if pressed:
                 press(note)
+            else:
+                release(note)
         # 1 ms debounce delay
         sleep(0.001)
 
