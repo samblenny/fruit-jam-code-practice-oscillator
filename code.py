@@ -36,8 +36,17 @@ def configure_dac(i2c, sample_rate, mclk_hz):
     # 2. Configure headphone/speaker routing and volumes (order matters here)
     dac.speaker_output = False
     dac.headphone_output = True
-    dac.dac_volume = -3  # Keep this below 0 to avoid DSP filter clipping
-    dac.headphone_volume = 3  # CAUTION! Line level. Too loud for headphones!
+    #
+    # dac_volume (digital gain) range is -63.5 dB (soft) to 24 dB (loud).
+    # headphone_volume (analog amp) range is -78.3 dB (soft) to 0 dB (loud).
+    # - For samples that are normalized to near full scale loudness, keep
+    #   dac_volume below 0 to avoid DSP filter clipping
+    # - Use dac_volume=-3, headphone_volume=0 for line level
+    # - Try headphone_volume=-24 for headphones (adjust as needed)
+    #
+    dac.dac_volume = -3       # Keep this below 0 to avoid DSP filter clipping
+    dac.headphone_volume = 0  # CAUTION! Line level. Too loud for headphones!
+    # dac.headphone_volume = -24  # Use this for headphones
 
     # 3. Configure the right PLL and CODEC settings for our sample rate
     dac.configure_clocks(sample_rate=sample_rate, mclk_freq=MCLK_HZ)
@@ -91,7 +100,14 @@ def run():
 
     # Play sinewave on Fruit Jam DAC when Tip (Left, A4) of TRRS jack is
     # connected to GND by the Morse code key
-    print(f"Code practice oscillator is ready.")
+    print("""
+Code practice oscillator is ready.
+- CAUTION: Default volume is LINE LEVEL
+- For headphones, edit code.py to set `dac.headphone_volume = -24`
+- To play tones: press Button #3 or connect A4 to GND with mx straight key
+- For mx straight key STL file and build instructions, see Playground guide at
+  https://adafruit-playground.com/u/SamBlenny/pages/fruit-jam-code-practice-oscillator
+""")
     note = synthio.Note(frequency=MORSE_HZ)
     prev_pressed = False
     while True:
